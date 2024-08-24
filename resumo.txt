@@ -1,0 +1,42 @@
+npm init -y
+npm install typescript -D
+npx tsc --init
+
+npm install axios
+
+NodeJS
+
+Para reconhecer o TypeScript no navegador, é necessário instalar o Webpack (conversão .ts para .js):
+npm install ts-loader -D
+npm install webpack-cli
+
+npx webpack
+
+Para iniciar o projeto, rode o seguinte comando: 
+
+npm run dev
+
+Após isso, utilize o plugin Live Server para inicializar a aplicação no navegador ou abra diretamente o arquivo index.html pelo diretório do projeto
+
+Referências:
+
+Crie seus projetos com TypeScript, HTML e CSS!
+
+https://www.youtube.com/watch?v=KKNi4aJsHJk
+
+Lucide Icons: https://lucide.dev/guide/
+
+https://api.unsplash.com/search/photos?query=ma%C3%A7a&client_id=nYaT0XqOqMWmXkVrNrsT39Ne0ITVTjBzUgcOEb5-WPM
+
+
+O algoritmo é:
+
+- Quando o usuário clicar em pesquisar, traduzir o termo de pesquisa (nome do personagem) para inglês.
+- Com o nome do personagem em inglês, fazer uma requisição à API da Marvel.
+- Com os dados em português, exibi-los em tela.
+
+Ao todo, são x requisições:
+1. Traduzir o termo de pesquisa para inglês.
+2. Pesquisar os dados do personagem com o termo de pesquisa.
+3. Pesquisar pelo personagem.
+4. Traduzir os dados do personagem.
