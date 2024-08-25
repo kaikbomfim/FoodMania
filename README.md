@@ -35,13 +35,6 @@ git clone https://github.com/kaikbomfim/FoodMania.git
 ```bash
 npm install
 ```
-
-- Inicie o servidor da aplicação em um ambiente de desenvolvimento Node.js, executando o seguinte comando:
-
-```bash
-npm run dev
-```
-
 - Por fim, acesse o arquivo `index.html` em seu navegador.
 
 ## Tecnologias Utilizadas
