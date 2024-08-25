@@ -5,6 +5,7 @@ interface CategoriaAlimentos {
 interface Object {
     categoriaAlimentos: CategoriaAlimentos;
     energiaKcal: number;
+    energiaKg: number;
     proteina: number;
     carboidrato: number;
     lipidios: number;

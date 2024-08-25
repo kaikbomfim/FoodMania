@@ -7,31 +7,135 @@
     <title>FoodMania</title>
   </head>
   <body>
-    <!-- Header da página -->
-    <header class="navbar">
+    <!-- Cabeçalho da página -->
+    <div class="navbar">
       <section class="header-inner-content">
         <a href="index.html">
           <h1 class="logo">Food<span>Mania</span></h1>
         </a>
         <nav>
           <ul>
-            <li><a href="index.html">Início</a></li>
-            <li><a href="about.html">Sobre</a></li>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Produtos e Serviços</a></li>
+            <li><a href="#">Conta</a></li>
+            <li><a href="#">Contato</a></li>
+            <li><a href="#">Sobre</a></li>
           </ul>
         </nav>
         <div class="nav-icon-container">
+          <i data-lucide="carrot" alt="ícone do foodmania"></i>
           <i data-lucide="menu" alt="menu" class="menu-button"></i>
         </div>
       </section>
-      <h1>FoodMania</h1>
+    </div>
+    <header>
+      <div class="header-inner-content">
+        <div class="header-bottom-side">
+          <aside class="header-bottom-side-left">
+            <h2>Bem-vindo à FoodMania!</h2>
+            <p>
+              FoodMania é o seu portal para descobrir de forma fácil e divertida
+              as principais informações nutricionais dos alimentos de acordo com
+              a tabela
+              <a
+                class="taco-link"
+                target="_blank"
+                href="https://www.cfn.org.br/wp-content/uploads/2017/03/taco_4_edicao_ampliada_e_revisada.pdf"
+                >TACO</a
+              >.
+            </p>
+            <a href="#" class="button">Saiba mais &#8594;</a>
+          </aside>
+          <aside class="header-bottom-side-right">
+            <img src="./public/assets/food.png" alt="alimentos" />
+          </aside>
+        </div>
+      </div>
     </header>
+
     <!-- Conteúdo da página -->
-    <section>
-      <input type="text" placeholder="Buscar personagem..." />
-      <button type="submit">Buscar</button>
-    </section>
+    <main>
+      <div>
+        <section class="page-inner-content">
+          <h3 class="section-title">Informações Nutricionais</h3>
+          <div class="subtitle-underline"></div>
+          <div>
+            <div class="food-container-search">
+              <div class="food-search">
+                <input
+                  id="food-input"
+                  class="food-input"
+                  type="text"
+                  placeholder="Digite o nome do alimento..."
+                />
+                <i data-lucide="search" alt="ícone de pesquisa"></i>
+              </div>
+              <button id="food-submit" class="food-submit" type="submit">
+                Buscar
+              </button>
+            </div>
+            <div class="results-container">
+              <div class="food-results">
+                <!-- Renderiza os resultados da pesquisa -->
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <div class="page-inner-content">
+        <h3 class="section-title">Feedbacks</h3>
+        <div class="subtitle-underline"></div>
+        <section class="feedbacks">
+          <!-- Renderiza os feedbacks dos usuários -->
+        </section>
+      </div>
+    </main>
+
+    <!-- Rodapé da página -->
+    <footer>
+      <div class="page-inner-content footer-content">
+        <section class="download-options">
+          <p>Baixe nosso aplicativo</p>
+          <p>Baixe nosso aplicativo para Android e iOS</p>
+          <p></p>
+          <div>
+            <a href="#"
+              ><img src="./public/assets/play-store.png" alt="Google Play"
+            /></a>
+            <a href="#"
+              ><img src="./public/assets/app-store.png" alt="Apple Store"
+            /></a>
+          </div>
+        </section>
+
+        <section class="logo-footer">
+          <h1 class="logo">Food<span>Mania</span></h1>
+          <p>
+            Descubra o poder da nutrição com informações precisas e acessíveis,
+            sempre ao seu alcance.
+          </p>
+        </section>
+
+        <section class="links-footer">
+          <h3>Links úteis</h3>
+          <ul>
+            <li><a href="#">Cupons</a></li>
+            <li><a href="#">Blog Post</a></li>
+            <li><a href="#">Políticas</a></li>
+            <li><a href="#">Faça parte da equipe</a></li>
+          </ul>
+        </section>
+      </div>
+      <hr class="page-inner-content" />
+      <section class="page-inner-content copyright">
+        <p>&#169; 2024 - Kaik Bomfim - Todos os Direitos Reservados</p>
+      </section>
+    </footer>
+
     <!-- Importa os arquivos TypeScript convertidos para JavaScript pelo Webpack (padrão WEB) -->
     <script src="dist/index.bundle.js"></script>
     <script src="dist/icons.bundle.js"></script>
+    <script src="dist/feedbacks.bundle.js"></script>
   </body>
 </html>

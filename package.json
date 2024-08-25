@@ -1,7 +1,7 @@
 {
-  "name": "marvelmania",
+  "name": "foodmania",
   "version": "1.0.0",
-  "description": "Aplicação web desenvolvida com HTML, CSS e TypeScript, que permite explorar e interagir com o universo Marvel através da API oficial.",
+  "description": "Aplicação web em HTML, CSS e TypeScript que exibe informações nutricionais de alimentos através de uma API.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

@@ -4,6 +4,7 @@ module.exports = {
   entry: {
     index: "./src/scripts/index.ts", // Entrada principal
     icons: "./src/scripts/icons.ts", // Entrada para os ícones
+    feedbacks: "./src/scripts/feedbacks.ts", // Entrada para os feedbacks
   },
   module: {
     rules: [

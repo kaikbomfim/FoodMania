@@ -1,16 +1,474 @@
+/* Importa fonte Roboto Sans */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+
+:root {
+  /* Cor do background */
+  --background-color: #ebebeb;
+
+  /* Cor do header, footer e outros elementos principais */
+  --primary-color: #fc9403;
+  --primary-color-darker: #fc7b03;
+  --background-image: radial-gradient(#fff, #c7c7c7);
+
+  /* Cor dos cards de alimentos */
+  --secondary-color: #fcad03;
+
+  /* Cor do texto nos cards */
+  --text-color: #b3ff00;
+  --text-color-secondary: #ffffff;
+
+  /* Cor do box-shadow dos feedbacks */
+  --primary-box-shadow: #afafaf;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
 
-/* Importa fonte Roboto Sans */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+html,
+body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: "Roboto", sans-serif;
+  background-color: var(--background-color);
+}
+
+.lucide {
+  width: 2rem;
+  height: 2rem;
 }
 
 /* Header */
 .navbar {
-  background-color: #e32636;
+  background-color: var(--primary-color);
+  padding: 1.5rem;
+  position: sticky;
+  top: 0;
+  box-shadow: 10px 0px 10px var(--primary-color);
+  z-index: 99;
+
+  & section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+  }
+}
+
+.header-inner-content {
+  max-width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0.8rem;
+  & a {
+    text-decoration: none;
+  }
+}
+
+.logo {
+  color: var(--text-color);
+  & span {
+    color: var(--text-color-secondary);
+  }
+  font-size: 2rem;
+}
+
+nav {
+  & ul {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    > li {
+      > a {
+        color: var(--text-color-secondary);
+        margin-right: 1.5rem;
+        font-size: medium;
+      }
+      &:hover {
+        transform: translateY(-5px);
+        transition: all 0.2s ease-out;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.nav-icon-container {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: var(--text-color-secondary);
+}
+
+.menu-button {
+  display: none;
+}
+
+header {
+  background-image: var(--background-image);
+}
+
+.header-bottom-side {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  padding: 1rem;
+  > .header-bottom-side-left {
+    height: 100%;
+    flex-basis: 50%;
+    > h2 {
+      font-size: 3.2rem;
+      margin-bottom: 1.5rem;
+    }
+    > p {
+      line-height: 1.5rem;
+      margin-bottom: 1.5rem;
+    }
+    > a {
+      background-color: var(--primary-color);
+      border: none;
+      border-radius: 6rem;
+      padding: 0.8rem 3.8rem;
+      color: var(--text-color-secondary);
+      font-weight: 500;
+      font-size: 1rem;
+      transition: all 0.2s ease-out;
+      &:hover {
+        background-color: var(--primary-color-darker);
+      }
+    }
+    & .taco-link {
+      text-decoration: underline;
+      color: var(--primary-color);
+    }
+  }
+  > .header-bottom-side-right {
+    flex-basis: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    > img {
+      width: 105%;
+    }
+  }
+}
+
+/* Media Queries */
+@media (max-width: 800px) {
+  .logo {
+    font-size: 1.2rem;
+  }
+
+  nav {
+    position: absolute;
+    background-color: var(--primary-color);
+    width: 100%;
+    top: 46px;
+    display: none;
+  }
+
+  svg:first-child {
+    display: none;
+  }
+
+  .show-menu nav {
+    display: block;
+  }
+
+  nav ul {
+    flex-direction: column;
+  }
+
+  nav ul li {
+    text-align: center;
+    padding: 0.8rem;
+  }
+
+  .menu-button {
+    display: block;
+  }
+
+  .header-bottom-side {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 4rem;
+    & img {
+      margin-top: 2rem;
+      overflow-x: hidden;
+    }
+  }
+}
+
+/* Header */
+
+/* Main Content */
+.page-inner-content {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  margin-top: 4rem;
+  font-size: 1.8rem;
+}
+
+.subtitle-underline {
+  width: 10rem;
+  height: 0.3rem;
+  background-color: var(--primary-color);
+  border-radius: 6rem;
+  margin: 8px auto 0 auto;
+}
+
+.food-container-search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 32px 0 auto 0;
+  gap: 1rem;
+  > .food-search {
+    position: relative;
+    display: inline-block;
+    > .food-input {
+      border: none;
+      border-radius: 6rem;
+      padding: 0.8rem;
+      width: 30rem;
+      font-size: 1rem;
+      &:focus {
+        outline-style: solid 1px;
+        outline-color: var(--primary-color);
+      }
+    }
+
+    > svg {
+      position: absolute;
+      right: 0.8rem;
+      top: 50%;
+      transform: translateY(-50%);
+      pointer-events: none;
+      color: var(--primary-color);
+    }
+  }
+  > .food-submit {
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 6rem;
+    padding: 0.8rem 3.8rem;
+    color: var(--text-color-secondary);
+    font-weight: 500;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease-out;
+    &:hover {
+      background-color: var(--primary-color-darker);
+    }
+  }
+}
+
+.results-container {
+  text-align: center;
+  margin-top: 2rem;
+  > h2 {
+    margin-bottom: 1rem;
+  }
+}
+.food-results {
+  display: grid;
+  gap: 1rem;
+  margin-top: 2rem;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.food-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 0 15px var(--primary-box-shadow);
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  &:hover {
+    transform: translateY(-5px);
+  }
+}
+
+.food-card img {
+  max-width: 100%;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.food-card p {
+  margin: 0.5rem 0;
+  text-align: center;
+}
+
+/* Main Content */
+
+/* Media Queries */
+@media (max-width: 800px) {
+  .section-title {
+    font-size: 1rem;
+  }
+
+  .food-container-search {
+    flex-direction: column;
+    > .food-search {
+      > .food-input {
+        width: 18rem;
+      }
+    }
+  }
+
+  .results-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Feedbacks */
+.feedbacks {
+  display: flex;
+  padding: 4rem 1rem;
+  justify-content: space-evenly;
+}
+
+.feedback {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 30%;
+  text-align: center;
+  box-shadow: 0 0 15px var(--primary-box-shadow);
+  padding: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  &:hover {
+    transform: translateY(-5px);
+  }
+  & p {
+    margin: 5px 0;
+    &:first-child {
+      font-weight: bold;
+      font-size: 5rem;
+      color: var(--primary-color);
+      margin-top: 3rem;
+      line-height: 2rem;
+    }
+    &:last-child {
+      font-weight: bold;
+    }
+  }
+  > .rate {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+  }
+}
+
+/* Media Queries */
+@media (max-width: 800px) {
+  .feedbacks {
+    flex-direction: column;
+  }
+
+  .feedback {
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* Feedbacks */
+
+/* Footer */
+footer {
+  background-color: var(--primary-color);
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  color: #000000;
+  padding: 2rem 1rem;
+  gap: 2rem;
+}
+
+.download-options {
+  > * {
+    margin: 1rem 0;
+  }
+  > p:first-child {
+    font-weight: bold;
+    color: var(--text-color-secondary);
+  }
+  > div {
+    display: flex;
+    gap: 0.5rem;
+    & img {
+      width: 180px;
+      cursor: pointer;
+    }
+  }
+}
+
+.logo-footer {
+  text-align: center;
+}
+
+.links-footer {
+  > h3 {
+    color: var(--text-color-secondary);
+    margin-bottom: 0.8rem;
+  }
+  > ul {
+    list-style: none;
+    & li {
+      margin-bottom: 0.5rem;
+      & a {
+        color: #000000;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.copyright {
+  color: var(--text-color-secondary);
+  padding: 1rem 0;
+  text-align: center;
+}
+
+/* Media Queries */
+@media (max-width: 800px) {
+  .footer-content {
+    display: inline;
+    font-size: 0.8rem;
+    > section {
+      padding: 1rem;
+    }
+  }
+
+  .download-options {
+    > div {
+      display: inline;
+      & img {
+        width: 120px;
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 0.8rem;
+  }
 }
