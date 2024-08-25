@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="src/styles/index.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css"
+    />
     <title>FoodMania</title>
   </head>
   <body>
-    <!-- Cabeçalho da página -->
+    <!-- Cabeçalho da página com navegação -->
     <div class="navbar">
       <section class="header-inner-content">
         <a href="index.html">
@@ -28,6 +33,8 @@
         </div>
       </section>
     </div>
+
+    <!-- Cabeçalho principal com introdução e imagem -->
     <header>
       <div class="header-inner-content">
         <div class="header-bottom-side">
@@ -53,7 +60,7 @@
       </div>
     </header>
 
-    <!-- Conteúdo da página -->
+    <!-- Conteúdo principal da página -->
     <main>
       <div>
         <section class="page-inner-content">
@@ -76,7 +83,7 @@
             </div>
             <div class="results-container">
               <div class="food-results">
-                <!-- Renderiza os resultados da pesquisa -->
+                <!-- Resultados da pesquisa serão renderizados aqui -->
               </div>
             </div>
           </div>
@@ -87,12 +94,12 @@
         <h3 class="section-title">Feedbacks</h3>
         <div class="subtitle-underline"></div>
         <section class="feedbacks">
-          <!-- Renderiza os feedbacks dos usuários -->
+          <!-- Feedbacks dos usuários serão renderizados aqui -->
         </section>
       </div>
     </main>
 
-    <!-- Rodapé da página -->
+    <!-- Rodapé da página com informações e links úteis -->
     <footer>
       <div class="page-inner-content footer-content">
         <section class="download-options">
@@ -132,6 +139,12 @@
         <p>&#169; 2024 - Kaik Bomfim - Todos os Direitos Reservados</p>
       </section>
     </footer>
+
+    <!-- Importa a biblioteca Toastify para mensagens de notificação -->
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/toastify-js"
+    ></script>
 
     <!-- Importa os arquivos TypeScript convertidos para JavaScript pelo Webpack (padrão WEB) -->
     <script src="dist/index.bundle.js"></script>

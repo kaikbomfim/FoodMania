@@ -11,6 +11,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/toastify-js": "^1.12.3",
     "ts-loader": "^9.5.1",
     "typescript": "^5.5.4"
   },
@@ -20,6 +21,7 @@
     "js-md5": "^0.8.3",
     "lucide": "^0.433.0",
     "md5": "^2.3.0",
+    "toastify-js": "^1.12.0",
     "webpack-cli": "^5.1.4"
   }
 }

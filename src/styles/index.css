@@ -1,26 +1,19 @@
 /* Importa fonte Roboto Sans */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
+/* Definições de cores e estilos globais */
 :root {
-  /* Cor do background */
-  --background-color: #ebebeb;
-
-  /* Cor do header, footer e outros elementos principais */
-  --primary-color: #fc9403;
-  --primary-color-darker: #fc7b03;
-  --background-image: radial-gradient(#fff, #c7c7c7);
-
-  /* Cor dos cards de alimentos */
-  --secondary-color: #fcad03;
-
-  /* Cor do texto nos cards */
-  --text-color: #b3ff00;
-  --text-color-secondary: #ffffff;
-
-  /* Cor do box-shadow dos feedbacks */
-  --primary-box-shadow: #afafaf;
+  --background-color: #ebebeb; /* Cor do fundo */
+  --primary-color: #fc9403; /* Cor principal */
+  --primary-color-darker: #fc7b03; /* Cor principal mais escura */
+  --background-image: radial-gradient(#fff, #c7c7c7); /* Imagem de fundo */
+  --secondary-color: #fcad03; /* Cor secundária */
+  --text-color: #b3ff00; /* Cor do texto nos cards */
+  --text-color-secondary: #ffffff; /* Cor secundária do texto */
+  --primary-box-shadow: #afafaf; /* Cor da sombra dos feedbacks */
 }
 
+/* Reseta padding e margin, e define box-sizing global */
 * {
   box-sizing: border-box;
   padding: 0;
@@ -29,14 +22,15 @@
 
 html,
 body {
-  overflow-x: hidden;
+  overflow-x: hidden; /* Remove rolagem horizontal */
 }
 
 body {
-  font-family: "Roboto", sans-serif;
-  background-color: var(--background-color);
+  font-family: "Roboto", sans-serif; /* Fonte do corpo */
+  background-color: var(--background-color); /* Cor de fundo */
 }
 
+/* Tamanho dos ícones */
 .lucide {
   width: 2rem;
   height: 2rem;
@@ -44,12 +38,12 @@ body {
 
 /* Header */
 .navbar {
-  background-color: var(--primary-color);
-  padding: 1.5rem;
-  position: sticky;
+  background-color: var(--primary-color); /* Cor de fundo do header */
+  padding: 1.5rem; /* Espaçamento interno */
+  position: sticky; /* Fixa o header no topo */
   top: 0;
-  box-shadow: 10px 0px 10px var(--primary-color);
-  z-index: 99;
+  box-shadow: 10px 0px 10px var(--primary-color); /* Sombra do header */
+  z-index: 99; /* Sobreposição */
 
   & section {
     display: flex;
@@ -59,9 +53,10 @@ body {
   }
 }
 
+/* Conteúdo do header */
 .header-inner-content {
-  max-width: 1300px;
-  margin-left: auto;
+  max-width: 1300px; /* Largura máxima */
+  margin-left: auto; /* Centraliza horizontalmente */
   margin-right: auto;
   padding: 0.8rem;
   & a {
@@ -69,49 +64,55 @@ body {
   }
 }
 
+/* Estilo do logo */
 .logo {
-  color: var(--text-color);
+  color: var(--text-color); /* Cor do texto do logo */
   & span {
-    color: var(--text-color-secondary);
+    color: var(--text-color-secondary); /* Cor secundária do texto */
   }
-  font-size: 2rem;
+  font-size: 2rem; /* Tamanho da fonte */
 }
 
+/* Navegação */
 nav {
   & ul {
-    display: flex;
-    list-style: none;
+    display: flex; /* Alinha itens horizontalmente */
+    list-style: none; /* Remove marcadores */
     align-items: center;
     > li {
       > a {
-        color: var(--text-color-secondary);
-        margin-right: 1.5rem;
-        font-size: medium;
+        color: var(--text-color-secondary); /* Cor do texto dos links */
+        margin-right: 1.5rem; /* Espaçamento entre links */
+        font-size: medium; /* Tamanho da fonte */
       }
       &:hover {
-        transform: translateY(-5px);
+        transform: translateY(-5px); /* Efeito ao passar o mouse */
         transition: all 0.2s ease-out;
-        font-weight: bold;
+        font-weight: bold; /* Negrito no hover */
       }
     }
   }
 }
 
+/* Contêiner dos ícones do menu */
 .nav-icon-container {
   display: flex;
   align-items: center;
-  cursor: pointer;
-  color: var(--text-color-secondary);
+  cursor: pointer; /* Cursor de ponteiro */
+  color: var(--text-color-secondary); /* Cor dos ícones */
 }
 
+/* Botão do menu (oculto por padrão) */
 .menu-button {
   display: none;
 }
 
+/* Cor de fundo do header */
 header {
   background-image: var(--background-image);
 }
 
+/* Estilo da parte inferior do header */
 .header-bottom-side {
   display: flex;
   align-items: center;
@@ -119,7 +120,7 @@ header {
   padding: 1rem;
   > .header-bottom-side-left {
     height: 100%;
-    flex-basis: 50%;
+    flex-basis: 50%; /* Largura da coluna */
     > h2 {
       font-size: 3.2rem;
       margin-bottom: 1.5rem;
@@ -131,7 +132,7 @@ header {
     > a {
       background-color: var(--primary-color);
       border: none;
-      border-radius: 6rem;
+      border-radius: 6rem; /* Borda arredondada */
       padding: 0.8rem 3.8rem;
       color: var(--text-color-secondary);
       font-weight: 500;
@@ -142,8 +143,8 @@ header {
       }
     }
     & .taco-link {
-      text-decoration: underline;
-      color: var(--primary-color);
+      text-decoration: underline; /* Sublinhado */
+      color: var(--primary-color); /* Cor do link */
     }
   }
   > .header-bottom-side-right {
@@ -152,7 +153,7 @@ header {
     align-items: center;
     justify-content: center;
     > img {
-      width: 105%;
+      width: 105%; /* Largura da imagem */
     }
   }
 }
@@ -160,45 +161,45 @@ header {
 /* Media Queries */
 @media (max-width: 800px) {
   .logo {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Tamanho da fonte no mobile */
   }
 
   nav {
-    position: absolute;
+    position: absolute; /* Navegação sobreposta no mobile */
     background-color: var(--primary-color);
-    width: 100%;
-    top: 46px;
-    display: none;
+    width: 100%; /* Largura total */
+    top: 46px; /* Distância do topo */
+    display: none; /* Oculto por padrão */
   }
 
   svg:first-child {
-    display: none;
+    display: none; /* Oculta o primeiro ícone */
   }
 
   .show-menu nav {
-    display: block;
+    display: block; /* Exibe a navegação ao ativar a classe */
   }
 
   nav ul {
-    flex-direction: column;
+    flex-direction: column; /* Layout vertical no mobile */
   }
 
   nav ul li {
-    text-align: center;
+    text-align: center; /* Centraliza o texto */
     padding: 0.8rem;
   }
 
   .menu-button {
-    display: block;
+    display: block; /* Exibe o botão do menu */
   }
 
   .header-bottom-side {
-    flex-direction: column;
-    text-align: center;
-    padding-top: 4rem;
+    flex-direction: column; /* Layout vertical no mobile */
+    text-align: center; /* Centraliza o texto */
+    padding-top: 4rem; /* Espaçamento superior */
     & img {
-      margin-top: 2rem;
-      overflow-x: hidden;
+      margin-top: 2rem; /* Espaçamento superior da imagem */
+      overflow-x: hidden; /* Oculta rolagem horizontal */
     }
   }
 }
@@ -207,22 +208,22 @@ header {
 
 /* Main Content */
 .page-inner-content {
-  max-width: 1280px;
-  margin: 0 auto;
+  max-width: 1280px; /* Largura máxima */
+  margin: 0 auto; /* Centraliza horizontalmente */
 }
 
 .section-title {
-  text-align: center;
-  margin-top: 4rem;
-  font-size: 1.8rem;
+  text-align: center; /* Centraliza o texto */
+  margin-top: 4rem; /* Espaçamento superior */
+  font-size: 1.8rem; /* Tamanho da fonte */
 }
 
 .subtitle-underline {
-  width: 10rem;
-  height: 0.3rem;
-  background-color: var(--primary-color);
-  border-radius: 6rem;
-  margin: 8px auto 0 auto;
+  width: 10rem; /* Largura da linha sublinhada */
+  height: 0.3rem; /* Altura da linha */
+  background-color: var(--primary-color); /* Cor da linha */
+  border-radius: 6rem; /* Borda arredondada */
+  margin: 8px auto 0 auto; /* Margens */
 }
 
 .food-container-search {
@@ -230,29 +231,29 @@ header {
   align-items: center;
   justify-content: center;
   margin: 32px 0 auto 0;
-  gap: 1rem;
+  gap: 1rem; /* Espaçamento entre elementos */
   > .food-search {
-    position: relative;
+    position: relative; /* Posiciona o ícone dentro do campo de busca */
     display: inline-block;
     > .food-input {
       border: none;
       border-radius: 6rem;
       padding: 0.8rem;
-      width: 30rem;
+      width: 30rem; /* Largura do campo de busca */
       font-size: 1rem;
       &:focus {
-        outline-style: solid 1px;
-        outline-color: var(--primary-color);
+        outline-style: solid 1px; /* Borda de foco */
+        outline-color: var(--primary-color); /* Cor da borda de foco */
       }
     }
 
     > svg {
-      position: absolute;
-      right: 0.8rem;
-      top: 50%;
-      transform: translateY(-50%);
-      pointer-events: none;
-      color: var(--primary-color);
+      position: absolute; /* Posiciona o ícone dentro do campo de busca */
+      right: 0.8rem; /* Distância da borda direita */
+      top: 50%; /* Centraliza verticalmente */
+      transform: translateY(-50%); /* Ajusta o alinhamento vertical */
+      pointer-events: none; /* Ignora eventos do mouse */
+      color: var(--primary-color); /* Cor do ícone */
     }
   }
   > .food-submit {
@@ -271,45 +272,51 @@ header {
   }
 }
 
+/* Container para os resultados de busca, centralizado e com espaçamento superior */
 .results-container {
   text-align: center;
   margin-top: 2rem;
   > h2 {
-    margin-bottom: 1rem;
+    margin-bottom: 1rem; /* Espaçamento inferior do título */
   }
 }
+
+/* Layout da seção de resultados de alimentos em grid, centralizado com espaçamento entre itens */
 .food-results {
   display: grid;
   gap: 1rem;
   margin-top: 2rem;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsivo */
 }
 
+/* Estilo dos cards de alimentos */
 .food-card {
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-radius: 1rem;
-  padding: 1rem;
-  width: 300px;
-  box-shadow: 0 0 15px var(--primary-box-shadow);
-  cursor: pointer;
-  transition: all 0.2s ease-out;
+  border-radius: 1rem; /* Bordas arredondadas */
+  padding: 1rem; /* Espaçamento interno */
+  width: 300px; /* Largura fixa */
+  box-shadow: 0 0 15px var(--primary-box-shadow); /* Sombra */
+  cursor: pointer; /* Cursor de ponteiro */
+  transition: all 0.2s ease-out; /* Transição suave */
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Efeito de elevação no hover */
   }
 }
 
+/* Imagem dentro do card de alimento */
 .food-card img {
-  max-width: 100%;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
+  max-width: 100%; /* Largura máxima da imagem */
+  border-radius: 0.5rem; /* Bordas arredondadas */
+  margin-bottom: 1rem; /* Espaçamento inferior */
 }
 
+/* Parágrafo dentro do card de alimento */
 .food-card p {
-  margin: 0.5rem 0;
-  text-align: center;
+  margin: 0.5rem 0; /* Margens superior e inferior */
+  text-align: center; /* Alinhamento centralizado */
 }
 
 /* Main Content */
@@ -317,21 +324,21 @@ header {
 /* Media Queries */
 @media (max-width: 800px) {
   .section-title {
-    font-size: 1rem;
+    font-size: 1rem; /* Tamanho da fonte no mobile */
   }
 
   .food-container-search {
-    flex-direction: column;
+    flex-direction: column; /* Layout vertical */
     > .food-search {
       > .food-input {
-        width: 18rem;
+        width: 18rem; /* Largura reduzida do campo de busca */
       }
     }
   }
 
   .results-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Layout vertical */
     align-items: center;
     justify-content: center;
   }
@@ -340,41 +347,42 @@ header {
 /* Feedbacks */
 .feedbacks {
   display: flex;
-  padding: 4rem 1rem;
-  justify-content: space-evenly;
+  padding: 4rem 1rem; /* Espaçamento interno */
+  justify-content: space-evenly; /* Espaçamento igual entre feedbacks */
 }
 
+/* Estilo individual de cada feedback */
 .feedback {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  flex-basis: 30%;
-  text-align: center;
-  box-shadow: 0 0 15px var(--primary-box-shadow);
-  padding: 1rem;
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: all 0.2s ease-out;
+  flex-basis: 30%; /* Largura básica */
+  text-align: center; /* Alinhamento centralizado */
+  box-shadow: 0 0 15px var(--primary-box-shadow); /* Sombra */
+  padding: 1rem; /* Espaçamento interno */
+  border-radius: 1rem; /* Bordas arredondadas */
+  cursor: pointer; /* Cursor de ponteiro */
+  transition: all 0.2s ease-out; /* Transição suave */
   &:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px); /* Efeito de elevação no hover */
   }
   & p {
-    margin: 5px 0;
+    margin: 5px 0; /* Margens superior e inferior */
     &:first-child {
-      font-weight: bold;
-      font-size: 5rem;
-      color: var(--primary-color);
-      margin-top: 3rem;
-      line-height: 2rem;
+      font-weight: bold; /* Texto em negrito */
+      font-size: 5rem; /* Tamanho grande da fonte */
+      color: var(--primary-color); /* Cor do texto */
+      margin-top: 3rem; /* Margem superior */
+      line-height: 2rem; /* Altura da linha */
     }
     &:last-child {
-      font-weight: bold;
+      font-weight: bold; /* Texto em negrito */
     }
   }
   > .rate {
-    color: var(--primary-color);
-    font-size: 1.3rem;
+    color: var(--primary-color); /* Cor das estrelas de avaliação */
+    font-size: 1.3rem; /* Tamanho da fonte */
   }
 }
 
@@ -399,63 +407,67 @@ footer {
 .footer-content {
   display: flex;
   align-items: center;
-  color: #000000;
-  padding: 2rem 1rem;
-  gap: 2rem;
+  color: #000000; /* Cor do texto */
+  padding: 2rem 1rem; /* Espaçamento interno */
+  gap: 2rem; /* Espaçamento entre itens */
 }
 
+/* Opções de download dentro do rodapé */
 .download-options {
   > * {
-    margin: 1rem 0;
+    margin: 1rem 0; /* Margens entre itens */
   }
   > p:first-child {
-    font-weight: bold;
-    color: var(--text-color-secondary);
+    font-weight: bold; /* Texto em negrito */
+    color: var(--text-color-secondary); /* Cor do texto */
   }
   > div {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.5rem; /* Espaçamento entre imagens */
     & img {
-      width: 180px;
-      cursor: pointer;
+      width: 180px; /* Largura das imagens */
+      cursor: pointer; /* Cursor de ponteiro */
     }
   }
 }
 
+/* Estilo do logo no rodapé */
 .logo-footer {
-  text-align: center;
+  text-align: center; /* Alinhamento centralizado */
 }
 
+/* Links no rodapé */
 .links-footer {
   > h3 {
-    color: var(--text-color-secondary);
-    margin-bottom: 0.8rem;
+    color: var(--text-color-secondary); /* Cor do título */
+    margin-bottom: 0.8rem; /* Margem inferior */
   }
   > ul {
-    list-style: none;
+    list-style: none; /* Remove marcadores */
     & li {
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.5rem; /* Margem inferior dos itens */
       & a {
-        color: #000000;
-        text-decoration: none;
+        color: #000000; /* Cor dos links */
+        text-decoration: none; /* Remove sublinhado */
       }
     }
   }
 }
 
+/* Estilo do texto de copyright */
 .copyright {
-  color: var(--text-color-secondary);
-  padding: 1rem 0;
-  text-align: center;
+  color: var(--text-color-secondary); /* Cor do texto */
+  padding: 1rem 0; /* Espaçamento interno */
+  text-align: center; /* Alinhamento centralizado */
 }
 
 /* Media Queries */
 @media (max-width: 800px) {
   .footer-content {
-    display: inline;
-    font-size: 0.8rem;
+    display: inline; /* Exibe inline no mobile */
+    font-size: 0.8rem; /* Tamanho da fonte reduzido */
     > section {
-      padding: 1rem;
+      padding: 1rem; /* Espaçamento interno reduzido */
     }
   }
 
@@ -463,12 +475,12 @@ footer {
     > div {
       display: inline;
       & img {
-        width: 120px;
+        width: 120px; /* Largura reduzida das imagens */
       }
     }
   }
 
   .copyright {
-    font-size: 0.8rem;
+    font-size: 0.8rem; /* Tamanho da fonte reduzido */
   }
 }
